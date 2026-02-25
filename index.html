@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csc 405 project</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --primary-orange: #FF8C00;
+            --dark-bg: #1a1a1a;
+            --glass-white: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            background-color: var(--primary-orange); /* Requirement ii */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Requirement iii: Align at the right */
+            min-height: 100vh;
+        }
+
+        .project-card {
+            width: 100%;
+            max-width: 900px;
+            background: var(--glass-white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: -10px 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-orange);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        header h1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #333;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Table Styling - Requirement i */
+        .table-container {
+            overflow-x: auto; /* Makes it mobile friendly */
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        td {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
+            color: #444;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        
+        .logo-col {
+            background: #3d195a;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        /* Interactive Buttons - Requirement iv */
+        .social-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn i { margin-right: 10px; font-size: 1.2rem; }
+
+        .btn-tiktok { background: #000000; }
+        .btn-facebook { background: #1877F2; }
+        .btn-twitter { background: #1DA1F2; }
+
+        .btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn:active { transform: scale(0.95); }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="project-card">
+        <header>
+            <h1>csc 405</h1>
+        </header>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Logo</th>
+                        <th>Club 1</th>
+                        <th>Club 2</th>
+                        <th>Club 3</th>
+                        <th>Club 4</th>
+                        <th>Club 5</th>
+                        <th>Zone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="logo-col"><i class="fas fa-trophy"></i></td>
+                        <td>Arsenal<br><small>61 Pts</small></td>
+                        <td>Man City<br><small>56 Pts</small></td>
+                        <td>Aston Villa<br><small>51 Pts</small></td>
+                        <td>Man Utd<br><small>48 Pts</small></td>
+                        <td>Chelsea<br><small>45 Pts</small></td>
+                        <td>Champions</td>
+                    </tr>
+                    <tr>
+                        <td class="logo-col"><i class="fas fa-chart-line"></i></td>
+                        <td>Liverpool<br><small>45 Pts</small></td>
+                        <td>Brentford<br><small>40 Pts</small></td>
+                        <td>Bournemouth<br><small>38 Pts</small></td>
+                        <td>Everton<br><small>37 Pts</small></td>
+                        <td>Fulham<br><small>37 Pts</small></td>
+                        <td>Top Half</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="social-section">
+            <p>Connect with the League</p>
+            <a href="https://www.tiktok.com" class="btn btn-tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://www.facebook.com" class="btn btn-facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.twitter.com" class="btn btn-twitter" target="_blank">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2026 CSC 405 Web Design Project
+        </footer>
+    </div>
+
+</body>
+</html>
